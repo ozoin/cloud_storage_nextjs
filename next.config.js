@@ -6,7 +6,7 @@ const nextConfig = {
     serverRoute: 'https://nestjs-cloudstorage.onrender.com'
   },
   images: {
-    domains: ['localhost','nestjs-cloudstorage.onrender.com'],
+    domains: ['localhost'],
   },
 }
 
