@@ -11,7 +11,7 @@ export const remove = (ids:number[]): Promise<void> => {
     return axios.delete("/files?id="+ids);
 }
 
-export const uploadFile = async (file)=> {
+export const uploadFile = async (file: File)=> {
 
     const formData = new FormData();
     formData.append("file",file)

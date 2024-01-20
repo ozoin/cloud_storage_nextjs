@@ -16,7 +16,7 @@ export const testConnection = async () => {
     return await axios.get('/')
 }
 
-export const getMe = async ():Promise<User> => {
+export const getMe = async () => {
     return (await axios.get('users/me')).data;
 }
 

@@ -19,7 +19,7 @@ const LoginForm = () => {
     email: "",
     password: "",
   });
-  const handleInput = (e) => {
+  const handleInput = (e: { target: { name: any; value: any } }) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -27,7 +27,7 @@ const LoginForm = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
       if (signup) {
@@ -75,7 +75,6 @@ const LoginForm = () => {
                     value={formData.fullName}
                     onChange={handleInput}
                     className=" border text-black border-gray-300  sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required=""
                   />
                 </div>
               )}
@@ -91,7 +90,6 @@ const LoginForm = () => {
                   onChange={handleInput}
                   className="bg-gray-50 border text-black border-gray-300  sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="name@company.com"
-                  required=""
                 />
               </div>
               <div>
@@ -106,7 +104,6 @@ const LoginForm = () => {
                   value={formData.password}
                   onChange={handleInput}
                   className="bg-gray-50 border text-black border-gray-300  sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required=""
                 />
               </div>
 

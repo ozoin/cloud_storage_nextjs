@@ -10,7 +10,7 @@ export const CheckAuth = async (ctx: GetServerSidePropsContext) => {
     console.log(_token);
     try {
       const { data } = await Api.auth.getMe();
-      console.log(data);
+      // console.log(data);
       return {
         props: {},
       };

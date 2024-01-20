@@ -13,7 +13,7 @@ const extColor = {
 export type Extension = keyof typeof extColor;
 export type Color = typeof extColor[Extension];
 
-export const colorByExt = (ext: string):Color => {
+export const colorByExt = (ext:Extension):Color => {
     if (ext in extColor) {
         return extColor[ext];
     } else {

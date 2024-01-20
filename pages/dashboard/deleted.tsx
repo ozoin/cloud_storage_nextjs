@@ -22,7 +22,7 @@ interface Props {
   items: FileItem[];
 }
 
-const DashboardDeleted: NextPage<Props> = ({ items }) => {
+const DashboardDeleted = ({ items }: Props) => {
   return (
     <DashboardLayout>
       {/* <FileList items={items} /> */}

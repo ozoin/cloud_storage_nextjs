@@ -8,8 +8,8 @@ import { Layout } from "@/layouts/Layout";
 interface Props {
   userData: User;
 }
-
-const Profile: NextPage<Props> = ({ userData }) => {
+// { items }: Props
+const Profile = ({ userData }: Props) => {
   return (
     <div className="flex items-center justify-center  bg-gray-100">
       <div className="bg-gray-200 p-8 rounded-lg shadow-md w-[30%]">

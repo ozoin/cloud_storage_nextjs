@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import * as Api from "@/api";
 import LoadingSpinner from "../Spinner";
 const UploadButton = () => {
-  const [fileList, setFileList] = useState([]);
+  const [fileList, setFileList] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
-  const onUploadSuccess = async (uploadedFile) => {
+  const onUploadSuccess = async (uploadedFile: File) => {
     try {
       const file = await Api.files.uploadFile(uploadedFile);
       setLoading(false);
@@ -15,10 +15,12 @@ const UploadButton = () => {
     }
   };
 
-  const handleFileChange = async (event) => {
-    const file = event.target.files[0];
-    setFileList(file.name);
-    if (file) {
+  const handleFileChange = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    if (event.target.files && event.target.files.length > 0) {
+      const file = event.target.files[0];
+      setFileList([file.name]);
       setLoading(true);
       await onUploadSuccess(file);
     }

@@ -26,7 +26,7 @@ const DashboardLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
     },
   ];
   return (
-    <main className="w-[70%] mx-auto mt-5 flex items-center ">
+    <div className="w-[90%] mx-auto mt-5 flex items-center">
       <div className="w-[30%] flex  justify-center flex-col">
         <div className="flex justify-center">
           <UploadButton />
@@ -42,8 +42,8 @@ const DashboardLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
           </div>
         ))}
       </div>
-      <div className="w-[70%]">{children}</div>
-    </main>
+      <div className="w-[60%] m-5">{children}</div>
+    </div>
   );
 };
 

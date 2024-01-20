@@ -23,7 +23,7 @@ const Files: React.FC<FilesProps> = ({ items, withActions }) => {
     } catch (error) {
       setLoading(false);
       console.log(error);
-      toast.error(error);
+      toast.error(String(error));
     }
     setSelectdIds([]);
   };
@@ -69,3 +69,13 @@ const Files: React.FC<FilesProps> = ({ items, withActions }) => {
 };
 
 export default Files;
+function str(
+  error: unknown
+):
+  | import("react-hot-toast").Renderable
+  | import("react-hot-toast").ValueFunction<
+      import("react-hot-toast").Renderable,
+      import("react-hot-toast").Toast
+    > {
+  throw new Error("Function not implemented.");
+}

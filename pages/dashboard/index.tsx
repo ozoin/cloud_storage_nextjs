@@ -23,7 +23,7 @@ interface Props {
   items: FileItem[];
 }
 
-const DashboardPage: NextPage<Props> = ({ items }) => {
+const DashboardPage = ({ items }: Props) => {
   return (
     <DashboardLayout>
       {/* <FileList items={items} /> */}
