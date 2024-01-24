@@ -6,7 +6,7 @@ const nextConfig = {
     serverRoute: 'https://nestjs-cloudstorage.onrender.com'
   },
   images: {
-    domains: ['localhost','https://aquamarine-travesseiro-8b2493.netlify.app','https://nestjs-cloudstorage.onrender.com'],
+    domains: ['localhost','https://nestjs-cloudstorage.onrender.com'],
   },
 }
 

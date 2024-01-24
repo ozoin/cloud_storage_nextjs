@@ -4,7 +4,9 @@ import toast, { Toaster } from "react-hot-toast";
 
 import * as Api from "@/api";
 import { setCookie } from "nookies";
+import Spinner from "../Spinner";
 const LoginForm = () => {
+  const [loading, setLoading] = useState(false);
   const [signup, setSignup] = useState(false);
   const toggleSignup = () => {
     setSignup(!signup);
@@ -29,6 +31,7 @@ const LoginForm = () => {
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    setLoading(true);
     try {
       if (signup) {
         const response = await Api.auth.register(formData);
@@ -37,6 +40,7 @@ const LoginForm = () => {
           path: "/",
         });
         toast.success("You are signed up!");
+        setLoading(false);
         location.href = "/dashboard";
       } else {
         const response = await Api.auth.login({
@@ -48,10 +52,12 @@ const LoginForm = () => {
           path: "/",
         });
         toast.success("You are logged in!");
+        setLoading(false);
         location.href = "/dashboard";
       }
     } catch (error) {
       toast.error("Invalid credentials.  " + error);
+      setLoading(false);
     }
   };
   return (
@@ -107,12 +113,19 @@ const LoginForm = () => {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full text-white bg-red-500  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-              >
-                {signup ? "Sign up" : "Sign in"}
-              </button>
+              {loading ? (
+                <div className="w-full flex items-center justify-center">
+                  <Spinner />
+                </div>
+              ) : (
+                <button
+                  type="submit"
+                  className="w-full text-white bg-red-500  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                >
+                  {signup ? "Sign up" : "Sign in"}
+                </button>
+              )}
+
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 {signup
                   ? "Already have an account? "
