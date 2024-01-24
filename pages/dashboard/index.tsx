@@ -48,6 +48,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
       props: { items },
     };
   } catch (error) {
+    console.log("ERROR OCCURED IN GET ALL FILES METHOD ON INDEX.TSX");
     console.log(error);
     return { props: { items: [] } };
   }

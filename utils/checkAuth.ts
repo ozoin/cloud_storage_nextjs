@@ -15,6 +15,7 @@ export const CheckAuth = async (ctx: GetServerSidePropsContext) => {
         props: {},
       };
     } catch (error) {
+      console.log('Error in checkAuth')
       console.log(error);
       return {
         redirect: {
