@@ -47,7 +47,7 @@ export default function Home() {
       </button>
       <div className="flex flex-row">
         <h2 className="text-3xl font-mono subpixel-antialiased font-bold  tracking-widest text-center text-white ">
-          Hire me! =>  &nbsp;
+          Hire me! {"=>"} &nbsp;
         </h2>
         <a href="https://github.com/ozoin">
           <FaGithub
