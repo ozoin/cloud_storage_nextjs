@@ -1,4 +1,4 @@
-<h1>MEXT JS Fullstack project. Cloud storage app</h1>
+<h1>NEXT JS Fullstack project. Cloud storage app</h1>
 <h2>
   <hr/>
 Fullstack cloud storage applicaion for storing files into database with compression.<br/>
